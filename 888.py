@@ -1,31 +1,3 @@
-"""
-class Human:
-    def __init__(self, name="Human"):
-        self.name = name
-
-class Auto:
-    def __init__(self, brand):
-        self.brand = brand
-        self.passengers = []
-    def add_passengers (self, *args):
-        for passengers in args:
-            self.passengers.append(passengers)
-    def print_passengers_name (self):
-        if self.passengers !=[]:
-           print(f"Імена пасажирів")
-           for passengers in self.passengers:
-               print (passengers.name)
-
-        else: print (f"Немає пасажирів в автомобілі {self.brand}")
-
-Kiril = Human("Kiril")
-Igor = Human("Igor")
-car = Auto("Mercedes")
-car.add_passengers(Kiril, Igor )
-car.print_passengers_name()
-"""
-
-
 import random
 class Human:
     def __init__(self, name="Human",job = None, home = None, car = None ):
@@ -46,7 +18,7 @@ class Human:
         else:
             self.to_repair()
             return
-            self.job = Job(job_liste)
+            self.job = Job(job_list)
 
     def eat(self):
       if self.home.food() <=0:
@@ -172,6 +144,10 @@ class Human:
             print("Час ласощі ")
             self.shopping(manage = "delicious")
 
+
+class Auto:
+    def __init__(self, brand_list):
+        self.brand = random.choice(list(brand_list))
         self.fuel = brand_list[self.brand]["fuel"]
         self.strength = brand_list[self.brand]["strength"]
         self.consumption =brand_list[self.brand]["consumption"]
@@ -217,14 +193,7 @@ class Job:
         self.salary = job_list[self.job]["salary"]
         self.gladness_less = job_list[self.job]["gladness_less"]
 
-Maksim = Human(name="Maksim")
+Julia= Human(name="Julia")
 for day in range(1,8):
-    if Maksim.live(day) == False:
+    if Julia.live(day) == False:
         break
-
-
-
-
-
-
-
